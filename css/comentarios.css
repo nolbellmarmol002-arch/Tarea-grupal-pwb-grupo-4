@@ -1,0 +1,76 @@
+/* Estilos propios: zona de comentarios (se cargan después de la plantilla) */
+
+/* Encabezado: conserva la proporción de la imagen */
+header.masthead.masthead-corto {
+  min-height: 65.8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0 1rem;
+  background-color: #212529;
+  background-position: center top;
+  background-size: 100% auto;
+}
+header.masthead.masthead-corto .masthead-heading { font-size: 2.2rem; line-height: 2.6rem; margin-bottom: 2rem; }
+@media (max-width: 575px) {
+  header.masthead.masthead-corto .masthead-subheading { font-size: 1.1rem; line-height: 1.3rem; margin-bottom: 1rem; }
+  header.masthead.masthead-corto .masthead-heading { font-size: 1.7rem; line-height: 2rem; margin-bottom: 1rem; }
+  header.masthead.masthead-corto .btn { padding: 0.9rem 1.25rem; font-size: 0.9rem; }
+}
+@media (min-width: 768px) {
+  header.masthead.masthead-corto {
+    padding: 4rem 0 1rem;
+  }
+  header.masthead.masthead-corto .masthead-heading { font-size: 3.4rem; line-height: 3.8rem; margin-bottom: 2.5rem; }
+}
+
+/* Sección oscura con el mapa de fondo de la plantilla */
+.seccion-comentarios {
+  background-color: #212529;
+  background-image: url("../assets/img/map-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+.seccion-comentarios .section-heading { color: #fff; }
+.seccion-comentarios .section-subheading { color: #adb5bd; margin-bottom: 2.5rem; }
+
+/* Formulario */
+#form-comentario .form-group { margin-bottom: 1.5rem; }
+#form-comentario .form-control { padding: 1.25rem; height: auto; }
+#form-comentario textarea.form-control { min-height: 11rem; resize: vertical; }
+#form-comentario .form-control:focus { border-color: #ffc800; box-shadow: none; }
+#form-comentario .form-control::placeholder {
+  font-family: "Montserrat", sans-serif; font-weight: 700; color: #ced4da;
+}
+#form-comentario .invalid-feedback { color: #ff8f9c; }
+.contador-letras { font-size: .8rem; color: #adb5bd; margin-top: .25rem; }
+
+/* Cabecera de la lista */
+.titulo-lista { font-family: "Montserrat", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 1.1rem; }
+.contador-comentarios { background: #ffc800; color: #212529; font-size: .9rem; padding: .5rem .9rem; }
+
+/* Lista con scroll */
+.lista-comentarios { max-height: 30rem; overflow-y: auto; padding-right: .5rem; }
+.sin-comentarios { color: #adb5bd; font-style: italic; }
+
+/* Tarjeta de cada comentario */
+.tarjeta-comentario {
+  display: flex; gap: 1rem;
+  background: #fff; color: #212529;
+  border-left: 5px solid #ffc800;
+  border-radius: .35rem;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.avatar {
+  flex: 0 0 3rem; height: 3rem; width: 3rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: #212529; color: #ffc800;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 1.25rem;
+}
+.tarjeta-cuerpo { min-width: 0; flex: 1; }
+.tarjeta-cabecera { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; }
+.tarjeta-nombre { font-family: "Montserrat", sans-serif; font-weight: 700; }
+.tarjeta-fecha { font-size: .8rem; color: #6c757d; }
+.tarjeta-texto { margin: .25rem 0 0; line-height: 1.5; overflow-wrap: anywhere; }

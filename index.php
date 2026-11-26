@@ -1,16 +1,15 @@
 <?php
-// ======================================================================
-// PERSONA 2 (Backend): reemplace este arreglo con los comentarios que
-// lea de la base de datos, los más nuevos primero.
-// Cada comentario necesita: 'nombre' y 'comentario'.
-// Opcional: 'fecha' (por ejemplo "24/11/2026 10:30").
-// ======================================================================
-$comentarios = [
-];
-// ======================================================================
 
-$total    = count($comentarios);
-$enviado  = isset($_GET['enviado']); // guardar.php puede redirigir a index.php?enviado=1
+// Obtener los comentarios de la base de datos
+require_once __DIR__ . '/backend/obtener_comentarios.php';
+
+// Contar los comentarios guardados
+require_once __DIR__ . '/backend/contar_comentarios.php';
+
+$total = $totalComentarios;
+
+// Verificar si se publicó un comentario
+$enviado = isset($_GET['enviado']);
 
 function inicial($nombre) {
     $nombre = trim($nombre);
@@ -82,7 +81,7 @@ function inicial($nombre) {
 
                     <!-- Columna izquierda: formulario -->
                     <div class="col-lg-5">
-                        <form id="form-comentario" action="guardar.php" method="POST" novalidate>
+                        <form id="form-comentario" action="backend/guardar_comentario.php" method="POST" novalidate>
                             <div class="form-group">
                                 <input class="form-control" id="nombre" name="nombre" type="text"
                                        placeholder="Su nombre *" maxlength="50" required />
